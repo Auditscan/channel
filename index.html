@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Secure Audit Gateway | Support Bridge</title>
+    <!-- Google Fonts + System Font Stack -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (only used for secondary icons, not the main shield) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #eef2f5 0%, #f9fbfd 100%);
+            font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        /* main card – clean, premium, "link in bio" simplicity with high-security presence */
+        .audit-card {
+            max-width: 520px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+            padding: 2rem 1.8rem;
+            transition: all 0.2s ease;
+            text-align: center;
+            backdrop-filter: blur(0px);
+            border: 1px solid rgba(0, 128, 96, 0.08);
+        }
+
+        /* top micro gateway label (brand consistency) */
+        .gateway-badge {
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #5b6e8c;
+            background: #f0f4f9;
+            display: inline-block;
+            padding: 0.25rem 0.8rem;
+            border-radius: 40px;
+            margin-bottom: 1.2rem;
+        }
+
+        /* security icon container: replaced with external PNG */
+        .security-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .security-icon img {
+            width: 70px;
+            height: auto;
+            filter: drop-shadow(0 4px 6px rgba(0,128,96,0.15));
+            transition: transform 0.2s ease;
+        }
+        /* slight hover effect for icon */
+        .security-icon img:hover {
+            transform: scale(1.02);
+        }
+
+        /* main heading */
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #1a2c3e;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.75rem;
+        }
+
+        .subtext {
+            font-size: 0.95rem;
+            color: #4a5b6e;
+            background: #f8fafc;
+            padding: 0.6rem 1rem;
+            border-radius: 60px;
+            display: inline-block;
+            margin-bottom: 1.8rem;
+            font-weight: 500;
+            border: 1px solid #e9edf2;
+        }
+
+        /* button base styles (full width, pill shape) */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 100px;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            font-family: 'Inter', system-ui, sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* PRIMARY BUTTON (WhatsApp - high priority, solid Shopify Green) */
+        .btn-primary {
+            background: #008060;
+            color: white;
+            font-size: 1.2rem;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1.5rem;
+            border: none;
+            box-shadow: 0 8px 18px rgba(0, 128, 96, 0.25);
+            letter-spacing: -0.2px;
+            font-weight: 700;
+            transform: scale(1);
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            /* breathing animation (subtle pulse + scale) */
+            animation: gentleBreathing 2.2s infinite ease-in-out;
+        }
+
+        .btn-primary:hover {
+            background: #006e52;
+            transform: scale(1.01);
+            box-shadow: 0 12px 22px rgba(0, 128, 96, 0.3);
+            animation: none; /* smoother hover override */
+        }
+
+        /* breathing keyframes – professional pulse to highlight recommended path */
+        @keyframes gentleBreathing {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 6px 14px rgba(0, 128, 96, 0.2);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 12px 26px rgba(0, 128, 96, 0.35);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 6px 14px rgba(0, 128, 96, 0.2);
+            }
+        }
+
+        /* SECONDARY BUTTONS (outline style: white bg, dark gray border, black text) */
+        .btn-secondary {
+            background: white;
+            border: 1.5px solid #cdd9ed;
+            color: #1f2a3e;
+            font-size: 1rem;
+            padding: 0.85rem 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary i {
+            font-size: 1.1rem;
+            color: #3a4b66;
+        }
+
+        .btn-secondary:hover {
+            background: #f9fbfe;
+            border-color: #9aaebf;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        /* extra slight spacing for last secondary button */
+        .btn-secondary:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* footer note (encryption assurance) */
+        .audit-footer {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: #6f7d91;
+            border-top: 1px solid #ecf1f6;
+            padding-top: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            letter-spacing: 0.2px;
+        }
+
+        .audit-footer i {
+            font-size: 0.7rem;
+            color: #008060;
+            opacity: 0.8;
+        }
+
+        /* responsiveness: perfect on mobile */
+        @media (max-width: 480px) {
+            .audit-card {
+                padding: 1.6rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .btn-primary {
+                font-size: 1rem;
+                padding: 0.9rem 1rem;
+            }
+            .btn-secondary {
+                font-size: 0.9rem;
+                padding: 0.75rem 1rem;
+            }
+            .security-icon img {
+                width: 55px;
+            }
+            .subtext {
+                font-size: 0.85rem;
+                padding: 0.5rem 0.8rem;
+            }
+        }
+
+        /* focus accessibility */
+        .btn:focus-visible {
+            outline: 3px solid #008060;
+            outline-offset: 2px;
+        }
+
+        /* ensure clean alignment for icon + text */
+        .btn i, .btn-primary i {
+            font-size: 1.1em;
+        }
+
+        /* additional secure micro detail */
+        .encrypt-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="audit-card">
+    <!-- small gateway identifier: reinforces 'Secure Audit Gateway' brand -->
+    <div class="gateway-badge">
+        <i class="fas fa-shield-haltered" style="font-size: 0.7rem; margin-right: 4px;"></i> SECURE AUDIT GATEWAY
+    </div>
+
+    <!-- Security Icon: external PNG (Shopify Green themed) -->
+    <div class="security-icon">
+        <img src="https://static.wixstatic.com/media/76ec40_187fd963696c4c608cbf28acfb4cd79f~mv2.png" 
+             alt="Secure Audit Shield" 
+             loading="eager">
+    </div>
+
+    <!-- Bold title as required -->
+    <h1>Secure Audit Channel</h1>
+
+    <!-- Specialist & ticket ID verification hint -->
+    <div class="subtext">
+        <i class="fas fa-user-check" style="margin-right: 6px; font-size: 0.8rem;"></i> Specialist Assigned: James &nbsp;|&nbsp; <i class="fas fa-ticket-alt"></i> Please have your Ticket ID ready for verification.
+    </div>
+
+    <!-- ===================================================== -->
+    <!--  LINKS CONFIGURATION SECTION (EASY TO EDIT)           -->
+    <!--  Update the three URLs below whenever needed.        -->
+    <!--  The WhatsApp, Telegram, and Gmail buttons will      -->
+    <!--  automatically reflect your changes.                 -->
+    <!-- ===================================================== -->
+    <div id="dynamic-buttons-container">
+        <!-- Buttons are injected via JavaScript using the variables below -->
+        <!-- This ensures you only need to modify the variables in the <script> -->
+    </div>
+
+    <!-- Footer: encryption assurance exactly as required -->
+    <div class="audit-footer">
+        <i class="fas fa-lock"></i>
+        <span>End-to-end encrypted communication for store audits.</span>
+        <i class="fas fa-shield-virus" style="font-size: 0.7rem;"></i>
+    </div>
+</div>
+
+<script>
+    // *********************************************************
+    // ***************   EDITABLE LINKS SECTION  ***************
+    // *********************************************************
+    // Simply change the values below to update the button links.
+    // Keep the format exactly as shown (strings with full URLs).
+    // ---------------------------------------------------------
+    
+    // WhatsApp (Primary Button - High Priority)
+    const WHATSAPP_LINK = "https://wa.link/gqku32";
+    
+    // Telegram (Secondary Button)
+    const TELEGRAM_LINK = "https://t.me/shopifyco?text=My%20ticket%20ID%20is%20%23";
+    
+    // Gmail (Secondary Button)
+    const GMAIL_LINK = "mailto:Jamesfromshopifydeveloper@gmail.com";
+    
+    // *********************************************************
+    // ********** DO NOT EDIT BELOW UNLESS NECESSARY ***********
+    // *********************************************************
+    
+    // Function to inject buttons dynamically for easier maintenance
+    function buildButtons() {
+        const container = document.getElementById("dynamic-buttons-container");
+        if (!container) return;
+        
+        // Clear container if any placeholder content exists
+        container.innerHTML = "";
+        
+        // 1. Primary WhatsApp button (with breathing animation)
+        const whatsappBtn = document.createElement("a");
+        whatsappBtn.href = WHATSAPP_LINK;
+        whatsappBtn.target = "_blank";
+        whatsappBtn.rel = "noopener noreferrer";
+        whatsappBtn.className = "btn btn-primary";
+        whatsappBtn.innerHTML = `<span>⚡</span> Start Secure WhatsApp Audit`;
+        container.appendChild(whatsappBtn);
+        
+        // 2. Secondary Telegram button
+        const telegramBtn = document.createElement("a");
+        telegramBtn.href = TELEGRAM_LINK;
+        telegramBtn.target = "_blank";
+        telegramBtn.rel = "noopener noreferrer";
+        telegramBtn.className = "btn btn-secondary";
+        telegramBtn.innerHTML = `<i class="fab fa-telegram-plane"></i> Telegram`;
+        container.appendChild(telegramBtn);
+        
+        // 3. Secondary Gmail button
+        const gmailBtn = document.createElement("a");
+        gmailBtn.href = GMAIL_LINK;
+        // For mailto: we don't necessarily need target="_blank", but it's safe
+        gmailBtn.target = "_self";
+        gmailBtn.className = "btn btn-secondary";
+        gmailBtn.innerHTML = `<i class="fas fa-envelope"></i> Gmail`;
+        container.appendChild(gmailBtn);
+    }
+    
+    // Run when DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", buildButtons);
+</script>
+
+<!-- 
+    QUICK EDIT GUIDE:
+    - To change any link, scroll up inside the <script> block until you see:
+        const WHATSAPP_LINK = "...";
+        const TELEGRAM_LINK = "...";
+        const GMAIL_LINK = "...";
+      Replace the URL strings with your new links.
+    - Save the file and refresh the page. The buttons will automatically use the new links.
+    - The icon remains the external PNG from your Wix media.
+-->
+</body>
+</html>
