@@ -6,7 +6,7 @@
     <title>Secure Audit Gateway | Support Bridge</title>
     <!-- Google Fonts + System Font Stack -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 -->
+    <!-- Font Awesome 6 (only used for secondary icons, but we keep minimal) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -14,8 +14,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-        body {
+body {
             background: linear-gradient(145deg, #eef2f5 0%, #f9fbfd 100%);
             font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
             min-height: 100vh;
@@ -24,8 +23,7 @@
             justify-content: center;
             padding: 1.5rem;
         }
-
-        .audit-card {
+.audit-card {
             max-width: 520px;
             width: 100%;
             background: #ffffff;
@@ -36,8 +34,7 @@
             text-align: center;
             border: 1px solid rgba(0, 128, 96, 0.08);
         }
-
-        .gateway-badge {
+.gateway-badge {
             font-size: 0.7rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -49,8 +46,7 @@
             border-radius: 40px;
             margin-bottom: 1.2rem;
         }
-
-        .security-icon {
+.security-icon {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -65,16 +61,14 @@
         .security-icon img:hover {
             transform: scale(1.02);
         }
-
-        h1 {
+h1 {
             font-size: 1.9rem;
             font-weight: 700;
             color: #1a2c3e;
             letter-spacing: -0.3px;
             margin-bottom: 0.75rem;
         }
-
-        .subtext {
+.subtext {
             font-size: 0.95rem;
             color: #4a5b6e;
             background: #f8fafc;
@@ -85,8 +79,7 @@
             font-weight: 500;
             border: 1px solid #e9edf2;
         }
-
-        .btn {
+.btn {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -100,8 +93,7 @@
             font-family: 'Inter', system-ui, sans-serif;
             box-sizing: border-box;
         }
-
-        /* PRIMARY BUTTON (Gmail Reach Out) */
+/* PRIMARY BUTTON (WhatsApp only) */
         .btn-primary {
             background: #008060;
             color: white;
@@ -114,15 +106,13 @@
             font-weight: 700;
             animation: gentleBreathing 2.2s infinite ease-in-out;
         }
-
-        .btn-primary:hover {
+.btn-primary:hover {
             background: #006e52;
             transform: scale(1.01);
             box-shadow: 0 12px 22px rgba(0, 128, 96, 0.3);
             animation: none;
         }
-
-        @keyframes gentleBreathing {
+@keyframes gentleBreathing {
             0% {
                 transform: scale(1);
                 box-shadow: 0 6px 14px rgba(0, 128, 96, 0.2);
@@ -136,8 +126,7 @@
                 box-shadow: 0 6px 14px rgba(0, 128, 96, 0.2);
             }
         }
-
-        .audit-footer {
+.audit-footer {
             margin-top: 2rem;
             font-size: 0.75rem;
             color: #6f7d91;
@@ -149,14 +138,12 @@
             gap: 8px;
             letter-spacing: 0.2px;
         }
-
-        .audit-footer i {
+.audit-footer i {
             font-size: 0.7rem;
             color: #008060;
             opacity: 0.8;
         }
-
-        @media (max-width: 480px) {
+@media (max-width: 480px) {
             .audit-card {
                 padding: 1.6rem 1.2rem;
             }
@@ -175,62 +162,48 @@
                 padding: 0.5rem 0.8rem;
             }
         }
-
-        .btn:focus-visible {
+.btn:focus-visible {
             outline: 3px solid #008060;
             outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-
 <div class="audit-card">
     <div class="gateway-badge">
         <i class="fas fa-shield-haltered" style="font-size: 0.7rem; margin-right: 4px;"></i> SECURE AUDIT GATEWAY
     </div>
-
-    <!-- Security Icon -->
+<!-- Security Icon: external PNG (your custom shield) -->
     <div class="security-icon">
         <img src="https://static.wixstatic.com/media/76ec40_187fd963696c4c608cbf28acfb4cd79f~mv2.png"
              alt="Secure Audit Shield"
              loading="eager">
     </div>
-
-    <h1>Secure Audit Channel</h1>
-
-    <div class="subtext">
+<h1>Secure Audit Channel</h1>
+<div class="subtext">
         <i class="fas fa-user-check" style="margin-right: 6px; font-size: 0.8rem;"></i> Specialist Assigned: James &nbsp;|&nbsp; <i class="fas fa-ticket-alt"></i> Please have your Ticket ID ready for verification.
     </div>
-
+<!-- ========================================= -->
+    <!--  ONLY WHATSAPP BUTTON (EASY TO EDIT)      -->
+    <!--  Change the link below to update the button -->
     <!-- ========================================= -->
-    <!--  GMAIL REACH OUT BUTTON                    -->
-    <!--  mailto now opens with subject:            -->
-    <!--  "My Ticket ID is #"                       -->
-    <!--  Just replace # with your actual ticket.   -->
-    <!-- ========================================= -->
-    <div id="email-container">
-        <a href="mailto:jamesfromshopifydeveloper@gmail.com?subject=My%20Ticket%20ID%20is%20%23" 
-           rel="noopener" 
-           class="btn btn-primary" 
-           id="email-btn">
-            <i class="fas fa-envelope"></i> Gmail Reach Out
+    <div id="whatsapp-container">
+        <a href="https://wa.link/gqku32" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="whatsapp-btn">
+            <span>⚡</span> Start WhatsApp Audit
         </a>
     </div>
-
-    <div class="audit-footer">
+<div class="audit-footer">
         <i class="fas fa-lock"></i>
         <span>End-to-end encrypted communication for store audits.</span>
         <i class="fas fa-shield-virus" style="font-size: 0.7rem;"></i>
     </div>
 </div>
-
-<!-- 
-    HOW IT WORKS:
-    The mailto link opens the user's email client with subject:
-      "My Ticket ID is #"
-    They can then replace # with their real ticket number before sending.
-    If you want the button text to say something else, just change the text
-    between <a ...> and </a> (currently "Gmail Reach Out").
+<!-- Optional: small script to make link easy to edit (just modify the href above directly) -->
+<!--
+    TO CHANGE THE WHATSAPP LINK:
+    Simply edit the href="https://wa.link/gqku32" inside the <a> tag above.
+    Replace it with your new WhatsApp channel link.
 -->
 </body>
 </html>
+
