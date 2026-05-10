@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Secure Audit Gateway | Support Bridge</title>
-    <!-- Google Fonts + System Font Stack -->
+    <title>James · Direct Support</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (only used for secondary icons, but we keep minimal) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -14,196 +12,332 @@
             padding: 0;
             box-sizing: border-box;
         }
-body {
-            background: linear-gradient(145deg, #eef2f5 0%, #f9fbfd 100%);
-            font-family: 'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+
+        body {
+            background: #f0f2f5;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1.5rem;
         }
-.audit-card {
+
+        .direct-card {
             max-width: 520px;
             width: 100%;
             background: #ffffff;
-            border-radius: 2rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+            border-radius: 1.75rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
             padding: 2rem 1.8rem;
-            transition: all 0.2s ease;
-            text-align: center;
-            border: 1px solid rgba(0, 128, 96, 0.08);
+            border: 1px solid #eef2f6;
         }
-.gateway-badge {
-            font-size: 0.7rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            font-weight: 600;
-            color: #5b6e8c;
-            background: #f0f4f9;
-            display: inline-block;
-            padding: 0.25rem 0.8rem;
+
+        /* simple, professional personal badge */
+        .specialist-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #eef2fa;
+            padding: 0.3rem 1rem;
             border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #1e4663;
             margin-bottom: 1.2rem;
         }
-.security-icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        .security-icon img {
-            width: 70px;
-            height: auto;
-            filter: drop-shadow(0 4px 6px rgba(0,128,96,0.15));
-            transition: transform 0.2s ease;
-        }
-        .security-icon img:hover {
-            transform: scale(1.02);
-        }
-h1 {
-            font-size: 1.9rem;
+
+        h1 {
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #1a2c3e;
+            color: #1e2a36;
             letter-spacing: -0.3px;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
-.subtext {
-            font-size: 0.95rem;
+
+        .subhead {
+            font-size: 0.9rem;
             color: #4a5b6e;
-            background: #f8fafc;
+            border-left: 3px solid #1e6f5c;
+            padding-left: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .guidance-steps {
+            background: #f8fafd;
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            margin-bottom: 1.6rem;
+            border: 1px solid #eef2f8;
+        }
+
+        .step-title {
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: #1e6f5c;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .steps {
+            list-style: none;
+        }
+        .steps li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: #2c3e4f;
+            margin-bottom: 0.75rem;
+            font-weight: 450;
+        }
+        .steps li i {
+            width: 24px;
+            color: #1e6f5c;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .ticket-area {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 1.2rem;
+            padding: 0.9rem 1rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .ticket-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #6f7d96;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        .ticket-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .ticket-id {
+            background: #f4f8fe;
             padding: 0.6rem 1rem;
             border-radius: 60px;
-            display: inline-block;
-            margin-bottom: 1.8rem;
-            font-weight: 500;
-            border: 1px solid #e9edf2;
-        }
-.btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 100px;
-            transition: all 0.2s ease-in-out;
-            cursor: pointer;
-            font-family: 'Inter', system-ui, sans-serif;
-            box-sizing: border-box;
-        }
-/* PRIMARY BUTTON (WhatsApp only) */
-        .btn-primary {
-            background: #008060;
-            color: white;
-            font-size: 1.2rem;
-            padding: 1rem 1.2rem;
-            margin-bottom: 0;
-            border: none;
-            box-shadow: 0 8px 18px rgba(0, 128, 96, 0.25);
-            letter-spacing: -0.2px;
+            font-family: monospace;
             font-weight: 700;
-            animation: gentleBreathing 2.2s infinite ease-in-out;
+            font-size: 1.2rem;
+            color: #0b2b26;
+            border: 1px solid #dee6ef;
+            flex: 1;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.1s;
         }
-.btn-primary:hover {
-            background: #006e52;
-            transform: scale(1.01);
-            box-shadow: 0 12px 22px rgba(0, 128, 96, 0.3);
-            animation: none;
+
+        .copy-btn {
+            background: #f0f4f9;
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            color: #1e3a4d;
         }
-@keyframes gentleBreathing {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 6px 14px rgba(0, 128, 96, 0.2);
-            }
-            50% {
-                transform: scale(1.02);
-                box-shadow: 0 12px 26px rgba(0, 128, 96, 0.35);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 6px 14px rgba(0, 128, 96, 0.2);
-            }
+        .copy-btn:hover {
+            background: #e6edf4;
+            color: #1e6f5c;
         }
-.audit-footer {
-            margin-top: 2rem;
-            font-size: 0.75rem;
-            color: #6f7d91;
-            border-top: 1px solid #ecf1f6;
-            padding-top: 1.3rem;
+
+        .copy-feedback {
+            font-size: 0.7rem;
+            margin-top: 0.4rem;
+            text-align: right;
+            color: #1e6f5c;
+            min-height: 22px;
+        }
+
+        /* WhatsApp button — personal, not "official support" */
+        .whatsapp-direct {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            letter-spacing: 0.2px;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 0.9rem 1.2rem;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.2);
+            margin-bottom: 0.6rem;
         }
-.audit-footer i {
+        .whatsapp-direct:hover {
+            background: #1da15b;
+            transform: translateY(-1px);
+        }
+
+        .note {
             font-size: 0.7rem;
-            color: #008060;
-            opacity: 0.8;
+            color: #6f7e93;
+            text-align: center;
+            background: #fef9e6;
+            padding: 0.45rem;
+            border-radius: 30px;
         }
-@media (max-width: 480px) {
-            .audit-card {
-                padding: 1.6rem 1.2rem;
+
+        .footer {
+            margin-top: 1.6rem;
+            padding-top: 1rem;
+            border-top: 1px solid #edf2f7;
+            font-size: 0.7rem;
+            color: #7c8ba0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer i {
+            color: #1e6f5c;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 480px) {
+            .direct-card {
+                padding: 1.5rem 1.2rem;
             }
             h1 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
-            .btn-primary {
+            .ticket-id {
                 font-size: 1rem;
-                padding: 0.9rem 1rem;
             }
-            .security-icon img {
-                width: 55px;
-            }
-            .subtext {
-                font-size: 0.85rem;
-                padding: 0.5rem 0.8rem;
-            }
-        }
-.btn:focus-visible {
-            outline: 3px solid #008060;
-            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-<div class="audit-card">
-    <div class="gateway-badge">
-        <i class="fas fa-shield-haltered" style="font-size: 0.7rem; margin-right: 4px;"></i> SECURE AUDIT GATEWAY
+<div class="direct-card">
+    <div class="specialist-badge">
+        <i class="fas fa-user-check"></i> Your specialist · James
+        <i class="fas fa-shield-alt" style="font-size: 0.7rem;"></i>
     </div>
-<!-- Security Icon: external PNG (your custom shield) -->
-    <div class="security-icon">
-        <img src="https://static.wixstatic.com/media/76ec40_187fd963696c4c608cbf28acfb4cd79f~mv2.png"
-             alt="Secure Audit Shield"
-             loading="eager">
+
+    <h1>Direct contact</h1>
+    <div class="subhead">
+        I’m James, the specialist assigned to your case. Use this private channel to share your ticket ID and get a fast, human response.
     </div>
-<h1>Secure Audit Channel</h1>
-<div class="subtext">
-        <i class="fas fa-user-check" style="margin-right: 6px; font-size: 0.8rem;"></i> Specialist Assigned: James &nbsp;|&nbsp; <i class="fas fa-ticket-alt"></i> Please have your Ticket ID ready for verification.
+
+    <div class="guidance-steps">
+        <div class="step-title">
+            <i class="fas fa-compass"></i> How to proceed
+        </div>
+        <ul class="steps">
+            <li><i class="fas fa-copy"></i> <span>1. Copy your ticket ID below</span></li>
+            <li><i class="fab fa-whatsapp"></i> <span>2. Click “Message James”</span></li>
+            <li><i class="fas fa-paste"></i> <span>3. Paste the ticket ID and describe your issue</span></li>
+        </ul>
+        <div style="font-size: 0.7rem; background: #ffffffb3; border-radius: 20px; padding: 0.2rem 0.5rem; margin-top: 0.2rem; color: #2c5a4e;">
+            <i class="fas fa-stopwatch"></i> Usually replies within a few minutes (Mon–Fri)
+        </div>
     </div>
-<!-- ========================================= -->
-    <!--  ONLY WHATSAPP BUTTON (EASY TO EDIT)      -->
-    <!--  Change the link below to update the button -->
-    <!-- ========================================= -->
-    <div id="whatsapp-container">
-        <a href="https://wa.link/gqku32" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="whatsapp-btn">
-            <span>⚡</span> Start Audit
-        </a>
+
+    <!-- Ticket ID block -->
+    <div class="ticket-area">
+        <div class="ticket-label">
+            <i class="fas fa-id-card"></i> YOUR TICKET ID
+        </div>
+        <div class="ticket-row">
+            <div class="ticket-id" id="ticketIdDisplay">#BF-4774</div>
+            <button class="copy-btn" id="copyTicketBtn"><i class="far fa-copy"></i> Copy</button>
+        </div>
+        <div id="copyFeedback" class="copy-feedback"></div>
     </div>
-<div class="audit-footer">
-        <i class="fas fa-lock"></i>
-        <span>End-to-end encrypted communication for store audits.</span>
-        <i class="fas fa-shield-virus" style="font-size: 0.7rem;"></i>
+
+    <!-- Direct WhatsApp link to James (personal, not a call center) -->
+    <a href="https://wa.link/gqku32" target="_blank" rel="noopener noreferrer" class="whatsapp-direct">
+        <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Message James
+    </a>
+    <div class="note">
+        <i class="fas fa-lock"></i> Private, encrypted chat · Only you and James see this conversation.
+    </div>
+
+    <div class="footer">
+        <i class="fas fa-user-tie"></i> <span>Direct line to your specialist</span>
+        <i class="fas fa-check-double"></i>
     </div>
 </div>
-<!-- Optional: small script to make link easy to edit (just modify the href above directly) -->
-<!--
-    TO CHANGE THE WHATSAPP LINK:
-    Simply edit the href="https://wa.link/gqku32" inside the <a> tag above.
-    Replace it with your new WhatsApp channel link.
+
+<script>
+    (function() {
+        const copyBtn = document.getElementById('copyTicketBtn');
+        const feedbackSpan = document.getElementById('copyFeedback');
+        const ticketSpan = document.getElementById('ticketIdDisplay');
+        const TICKET = "#BF-4774";
+        let timeout;
+
+        function showMsg(msg, isErr = false) {
+            if (timeout) clearTimeout(timeout);
+            feedbackSpan.innerHTML = `<i class="fas ${isErr ? 'fa-exclamation-triangle' : 'fa-check-circle'}"></i> ${msg}`;
+            feedbackSpan.style.color = isErr ? "#c24a2a" : "#1e6f5c";
+            timeout = setTimeout(() => { feedbackSpan.innerHTML = ''; }, 2000);
+        }
+
+        async function copyTicket() {
+            try {
+                await navigator.clipboard.writeText(TICKET);
+                showMsg(`Copied! Now paste it in WhatsApp.`, false);
+                if (ticketSpan) {
+                    ticketSpan.style.backgroundColor = "#e0f0ea";
+                    setTimeout(() => ticketSpan.style.backgroundColor = "#f4f8fe", 200);
+                }
+            } catch (e) {
+                try {
+                    const ta = document.createElement('textarea');
+                    ta.value = TICKET;
+                    document.body.appendChild(ta);
+                    ta.select();
+                    const ok = document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    if (ok) showMsg(`Copied ${TICKET}`, false);
+                    else showMsg(`Manual copy: ${TICKET}`, true);
+                } catch (f) {
+                    showMsg(`Select and copy: ${TICKET}`, true);
+                }
+            }
+        }
+
+        copyBtn.addEventListener('click', (e) => { e.preventDefault(); copyTicket(); });
+        ticketSpan.style.cursor = 'pointer';
+        ticketSpan.addEventListener('click', copyTicket);
+        ticketSpan.title = "Click to copy ticket ID";
+    })();
+</script>
+<!-- 
+    ======================================================
+    What this page does:
+    - Presents James as a real specialist (not a fake "hello friend" scam)
+    - Uses WhatsApp as a direct, personal channel — which is normal for one‑on‑one help
+    - No "official support center" pretense → avoids the scammy feeling of a company using WhatsApp
+    - Ticket ID #BF-4774 is easily copyable
+    - Clean, professional, but clearly human
+    ======================================================
 -->
 </body>
 </html>
-
