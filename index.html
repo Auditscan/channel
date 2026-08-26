@@ -24,7 +24,7 @@
         }
 
         .direct-card {
-            max-width: 520px;
+            max-width: 540px;
             width: 100%;
             background: #ffffff;
             border-radius: 1.75rem;
@@ -33,7 +33,6 @@
             border: 1px solid #eef2f6;
         }
 
-        /* simple, professional personal badge */
         .specialist-badge {
             display: inline-flex;
             align-items: center;
@@ -52,16 +51,27 @@
             font-weight: 700;
             color: #1e2a36;
             letter-spacing: -0.3px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
-        .subhead {
+        .intro-message {
+            font-size: 0.95rem;
+            color: #2c3e4f;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            font-weight: 450;
+        }
+
+        .verification-note {
+            background: #f2f8f4;
+            border-left: 4px solid #1e6f5c;
+            padding: 0.9rem 1.1rem;
+            border-radius: 0.5rem;
             font-size: 0.9rem;
-            color: #4a5b6e;
-            border-left: 3px solid #1e6f5c;
-            padding-left: 0.9rem;
+            color: #1f3a2e;
+            font-weight: 500;
             margin-bottom: 1.5rem;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .guidance-steps {
@@ -103,80 +113,28 @@
             text-align: center;
         }
 
-        .ticket-area {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 1.2rem;
-            padding: 0.9rem 1rem;
-            margin-bottom: 1.6rem;
-        }
-
-        .ticket-label {
+        .reply-time {
             font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: #6f7d96;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.4rem;
+            background: #ffffffb3;
+            border-radius: 20px;
+            padding: 0.2rem 0.5rem;
+            margin-top: 0.2rem;
+            color: #2c5a4e;
+            display: inline-block;
         }
 
-        .ticket-row {
+        .contact-buttons {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 0.6rem;
         }
 
-        .ticket-id {
-            background: #f4f8fe;
-            padding: 0.6rem 1rem;
-            border-radius: 60px;
-            font-family: monospace;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #0b2b26;
-            border: 1px solid #dee6ef;
-            flex: 1;
-            text-align: center;
-            cursor: pointer;
-            transition: 0.1s;
-        }
-
-        .copy-btn {
-            background: #f0f4f9;
-            border: none;
-            padding: 0.6rem 1rem;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            color: #1e3a4d;
-        }
-        .copy-btn:hover {
-            background: #e6edf4;
-            color: #1e6f5c;
-        }
-
-        .copy-feedback {
-            font-size: 0.7rem;
-            margin-top: 0.4rem;
-            text-align: right;
-            color: #1e6f5c;
-            min-height: 22px;
-        }
-
-        /* WhatsApp button — personal, not "official support" */
-        .whatsapp-direct {
+        .whatsapp-direct, .telegram-direct {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            background: #25D366;
             color: white;
             font-weight: 700;
             font-size: 1.05rem;
@@ -184,11 +142,22 @@
             border-radius: 100px;
             text-decoration: none;
             transition: all 0.2s;
-            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.2);
-            margin-bottom: 0.6rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .whatsapp-direct {
+            background: #25D366;
         }
         .whatsapp-direct:hover {
             background: #1da15b;
+            transform: translateY(-1px);
+        }
+
+        .telegram-direct {
+            background: #229ED9;
+        }
+        .telegram-direct:hover {
+            background: #1a7fb5;
             transform: translateY(-1px);
         }
 
@@ -226,9 +195,6 @@
             h1 {
                 font-size: 1.5rem;
             }
-            .ticket-id {
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
@@ -240,8 +206,11 @@
     </div>
 
     <h1>Direct contact</h1>
-    <div class="subhead">
-        I’m James, the specialist assigned to your case. Use this private channel to share your ticket ID and get a fast, human response.
+    <div class="intro-message">
+        I’m James, the specialist assigned to your case. Use this private channel to reach me directly and get a fast, human response.
+    </div>
+    <div class="verification-note">
+        <i class="fas fa-id-card" style="margin-right: 8px;"></i> Kindly share your store URL or the Gmail associated with your store so I can verify your identity.
     </div>
 
     <div class="guidance-steps">
@@ -249,31 +218,23 @@
             <i class="fas fa-compass"></i> How to proceed
         </div>
         <ul class="steps">
-            <li><i class="fas fa-copy"></i> <span>1. Copy your ticket ID below</span></li>
-            <li><i class="fab fa-whatsapp"></i> <span>2. Click “Message James”</span></li>
-            <li><i class="fas fa-paste"></i> <span>3. Paste the ticket ID and describe your issue</span></li>
+            <li><i class="fas fa-comments"></i> <span>1. Choose your preferred messaging app below</span></li>
+            <li><i class="fas fa-paper-plane"></i> <span>2. Click the button to start a private chat</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>3. Share your store URL or Gmail to verify your identity</span></li>
         </ul>
-        <div style="font-size: 0.7rem; background: #ffffffb3; border-radius: 20px; padding: 0.2rem 0.5rem; margin-top: 0.2rem; color: #2c5a4e;">
-            <i class="fas fa-stopwatch"></i> Usually replies within a few minutes (Mon–Fri)
+        <div class="reply-time">
+            <i class="fas fa-stopwatch"></i> Usually replies within a few minutes
         </div>
     </div>
 
-    <!-- Ticket ID block -->
-    <div class="ticket-area">
-        <div class="ticket-label">
-            <i class="fas fa-id-card"></i> YOUR TICKET ID
-        </div>
-        <div class="ticket-row">
-            <div class="ticket-id" id="ticketIdDisplay">#BF-4774</div>
-            <button class="copy-btn" id="copyTicketBtn"><i class="far fa-copy"></i> Copy</button>
-        </div>
-        <div id="copyFeedback" class="copy-feedback"></div>
+    <div class="contact-buttons">
+        <a href="https://wa.link/jhyytx" target="_blank" rel="noopener noreferrer" class="whatsapp-direct">
+            <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Message James on WhatsApp
+        </a>
+        <a href="http://t.me/Jamesdeveloper123" target="_blank" rel="noopener noreferrer" class="telegram-direct">
+            <i class="fab fa-telegram" style="font-size: 1.4rem;"></i> Message James on Telegram
+        </a>
     </div>
-
-    <!-- Direct WhatsApp link to James (personal, not a call center) -->
-    <a href="https://wa.link/gqku32" target="_blank" rel="noopener noreferrer" class="whatsapp-direct">
-        <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Message James
-    </a>
     <div class="note">
         <i class="fas fa-lock"></i> Private, encrypted chat · Only you and James see this conversation.
     </div>
@@ -284,58 +245,12 @@
     </div>
 </div>
 
-<script>
-    (function() {
-        const copyBtn = document.getElementById('copyTicketBtn');
-        const feedbackSpan = document.getElementById('copyFeedback');
-        const ticketSpan = document.getElementById('ticketIdDisplay');
-        const TICKET = "#BF-4774";
-        let timeout;
-
-        function showMsg(msg, isErr = false) {
-            if (timeout) clearTimeout(timeout);
-            feedbackSpan.innerHTML = `<i class="fas ${isErr ? 'fa-exclamation-triangle' : 'fa-check-circle'}"></i> ${msg}`;
-            feedbackSpan.style.color = isErr ? "#c24a2a" : "#1e6f5c";
-            timeout = setTimeout(() => { feedbackSpan.innerHTML = ''; }, 2000);
-        }
-
-        async function copyTicket() {
-            try {
-                await navigator.clipboard.writeText(TICKET);
-                showMsg(`Copied! Now paste it in WhatsApp.`, false);
-                if (ticketSpan) {
-                    ticketSpan.style.backgroundColor = "#e0f0ea";
-                    setTimeout(() => ticketSpan.style.backgroundColor = "#f4f8fe", 200);
-                }
-            } catch (e) {
-                try {
-                    const ta = document.createElement('textarea');
-                    ta.value = TICKET;
-                    document.body.appendChild(ta);
-                    ta.select();
-                    const ok = document.execCommand('copy');
-                    document.body.removeChild(ta);
-                    if (ok) showMsg(`Copied ${TICKET}`, false);
-                    else showMsg(`Manual copy: ${TICKET}`, true);
-                } catch (f) {
-                    showMsg(`Select and copy: ${TICKET}`, true);
-                }
-            }
-        }
-
-        copyBtn.addEventListener('click', (e) => { e.preventDefault(); copyTicket(); });
-        ticketSpan.style.cursor = 'pointer';
-        ticketSpan.addEventListener('click', copyTicket);
-        ticketSpan.title = "Click to copy ticket ID";
-    })();
-</script>
 <!-- 
     ======================================================
     What this page does:
-    - Presents James as a real specialist (not a fake "hello friend" scam)
-    - Uses WhatsApp as a direct, personal channel — which is normal for one‑on‑one help
-    - No "official support center" pretense → avoids the scammy feeling of a company using WhatsApp
-    - Ticket ID #BF-4774 is easily copyable
+    - Presents James as a real specialist
+    - Uses WhatsApp and Telegram as direct, personal channels
+    - Asks for store URL or Gmail to verify identity (no ticket ID)
     - Clean, professional, but clearly human
     ======================================================
 -->
