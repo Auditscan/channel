@@ -130,7 +130,7 @@
             margin-bottom: 0.6rem;
         }
 
-        .telegram-direct {
+        .whatsapp-direct, .telegram-direct {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -143,9 +143,19 @@
             text-decoration: none;
             transition: all 0.2s;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            background: #229ED9;
         }
 
+        .whatsapp-direct {
+            background: #25D366;
+        }
+        .whatsapp-direct:hover {
+            background: #1da15b;
+            transform: translateY(-1px);
+        }
+
+        .telegram-direct {
+            background: #229ED9;
+        }
         .telegram-direct:hover {
             background: #1a7fb5;
             transform: translateY(-1px);
@@ -208,8 +218,8 @@
             <i class="fas fa-compass"></i> How to proceed
         </div>
         <ul class="steps">
-            <li><i class="fas fa-comments"></i> <span>1. Click the Telegram button below</span></li>
-            <li><i class="fas fa-paper-plane"></i> <span>2. Start a private chat with James</span></li>
+            <li><i class="fas fa-comments"></i> <span>1. Choose your preferred messaging app below</span></li>
+            <li><i class="fas fa-paper-plane"></i> <span>2. Click the button to start a private chat</span></li>
             <li><i class="fas fa-check-circle"></i> <span>3. Share your store URL or Gmail to verify your identity</span></li>
         </ul>
         <div class="reply-time">
@@ -218,6 +228,9 @@
     </div>
 
     <div class="contact-buttons">
+        <a href="https://wa.link/jhyytx" target="_blank" rel="noopener noreferrer" class="whatsapp-direct">
+            <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Message James on WhatsApp
+        </a>
         <a href="http://t.me/Jamesdeveloper123" target="_blank" rel="noopener noreferrer" class="telegram-direct">
             <i class="fab fa-telegram" style="font-size: 1.4rem;"></i> Message James on Telegram
         </a>
@@ -236,7 +249,7 @@
     ======================================================
     What this page does:
     - Presents James as a real specialist
-    - Uses Telegram as the only direct, personal channel
+    - Uses WhatsApp and Telegram as direct, personal channels
     - Asks for store URL or Gmail to verify identity (no ticket ID)
     - Clean, professional, but clearly human
     ======================================================
